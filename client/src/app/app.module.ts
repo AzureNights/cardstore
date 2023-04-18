@@ -43,6 +43,7 @@ const appRoutes: Routes = [
     HttpClientModule,
     RouterModule. forRoot(appRoutes),
     CarouselModule.forRoot()
+    
   ],
   providers: [],
   bootstrap: [AppComponent]

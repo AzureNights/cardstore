@@ -1,0 +1,37 @@
+.footer{
+
+    overflow: hidden;
+    background-color: black;
+    padding: 20px 10px;
+}
+
+h1{
+    color: antiquewhite;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 20px;
+}
+
+p{
+    color: antiquewhite;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 14px;
+
+}
+
+a{
+    color: antiquewhite;
+    text-align: center;
+    text-decoration: none;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 18px;
+    padding: 0px 5px;
+}
+
+i{
+    color: antiquewhite;
+    padding: 0px 10px;
+}
+
+a:hover{
+    color: #f1bfbf ;
+}
