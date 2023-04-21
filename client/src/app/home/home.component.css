@@ -1,0 +1,15 @@
+.carousel-caption a 
+{
+    text-decoration: none;
+    background-color: #fff;
+    color: gray;
+    padding: 15px 20px;
+    border-radius: 5px;
+    
+}
+
+.carousel-caption a:hover 
+{
+    background-color: var(--primary-color);
+    color: #fff;
+}

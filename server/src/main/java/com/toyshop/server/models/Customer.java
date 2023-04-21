@@ -2,16 +2,31 @@ package com.toyshop.server.models;
 
 public class Customer {
 
-    private String name;
+    private String username;
+    private String firstname;
+    private String lastname;
     private String address;
     private String email;
+    private String password;
 
 
-    public String getName() {
-        return name;
+    public String getUsername() {
+        return username;
     }
-    public void setName(String name) {
-        this.name = name;
+    public void setUsername(String username) {
+        this.username = username;
+    }
+    public String getFirstname() {
+        return firstname;
+    }
+    public void setFirstname(String firstname) {
+        this.firstname = firstname;
+    }
+    public String getLastname() {
+        return lastname;
+    }
+    public void setLastname(String lastname) {
+        this.lastname = lastname;
     }
     public String getAddress() {
         return address;
@@ -25,5 +40,10 @@ public class Customer {
     public void setEmail(String email) {
         this.email = email;
     }
-
+    public String getPassword() {
+        return password;
+    }
+    public void setPassword(String password) {
+        this.password = password;
+    }
 }

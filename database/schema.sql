@@ -21,3 +21,24 @@ create table products(
     primary key(product_id)
     
 )
+
+
+create table customer(
+    username varchar(128) unique, (inclyde must have)
+    firstname varchar(128),
+    lastname varchar(128),
+    address varchar(256),
+    email varchar(128),
+    password need to check,
+
+    primary key(username)
+
+
+    private String username;
+    private String firstname;
+    private String lastname;
+    private String address;
+    private String email;
+    private String password;
+
+)

@@ -3,7 +3,6 @@ import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
 import { RouterModule, Routes } from '@angular/router';
 
-
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
@@ -15,16 +14,20 @@ import { CarouselModule } from 'ngx-bootstrap/carousel';
 import { NavbarComponent } from './navbar/navbar.component';
 import { FooterComponent } from './footer/footer.component';
 import { ProductlistComponent } from './productlist/productlist.component';
+import { IdkService } from './idk.service';
+import { AboutComponent } from './about/about.component';
+import { CardDeetsService } from './card-deets.service';
+import { SignupComponent } from './signup/signup.component';
 
 const appRoutes: Routes = [
   {path: '', component: HomeComponent},
   {path: 'login', component: LoginComponent},
   {path: 'productinfo/productId', component: ProductinfoComponent},
   {path: 'checkout', component: CheckoutComponent},
-  {path: 'productlist', component: ProductlistComponent}
-
+  {path: 'productlist', component: ProductlistComponent},
+  {path: 'about', component: AboutComponent},
+  {path: 'signup', component: SignupComponent}
 ]
-
 
 @NgModule({
   declarations: [
@@ -35,17 +38,19 @@ const appRoutes: Routes = [
     ProductinfoComponent,
     NavbarComponent,
     FooterComponent,
-    ProductlistComponent
+    ProductlistComponent,
+    AboutComponent,
+    SignupComponent,
   ],
+
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
     HttpClientModule,
     RouterModule. forRoot(appRoutes),
     CarouselModule.forRoot()
-    
   ],
-  providers: [],
+  providers: [CardDeetsService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
