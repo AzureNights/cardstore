@@ -6,3 +6,12 @@ export interface CardDetails{
     image_url: string
     category: string
 }
+
+export interface Customer{
+    firstname: string 
+    lastname: string
+    password: string
+    email: string
+    address: string
+
+}

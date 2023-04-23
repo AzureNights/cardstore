@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
 import { RouterModule, Routes } from '@angular/router';
+import { ReactiveFormsModule } from '@angular/forms'
 
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
@@ -14,10 +15,11 @@ import { CarouselModule } from 'ngx-bootstrap/carousel';
 import { NavbarComponent } from './navbar/navbar.component';
 import { FooterComponent } from './footer/footer.component';
 import { ProductlistComponent } from './productlist/productlist.component';
-import { IdkService } from './idk.service';
 import { AboutComponent } from './about/about.component';
 import { CardDeetsService } from './card-deets.service';
 import { SignupComponent } from './signup/signup.component';
+import { CustomerdeetsService } from './customerdeets.service'
+
 
 const appRoutes: Routes = [
   {path: '', component: HomeComponent},
@@ -48,9 +50,10 @@ const appRoutes: Routes = [
     BrowserAnimationsModule,
     HttpClientModule,
     RouterModule. forRoot(appRoutes),
-    CarouselModule.forRoot()
+    CarouselModule.forRoot(),
+    ReactiveFormsModule,
   ],
-  providers: [CardDeetsService],
+  providers: [CardDeetsService, CustomerdeetsService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

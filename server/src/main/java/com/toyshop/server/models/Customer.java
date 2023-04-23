@@ -1,5 +1,10 @@
 package com.toyshop.server.models;
 
+import org.springframework.jdbc.support.rowset.SqlRowSet;
+
+import jakarta.json.Json;
+import jakarta.json.JsonObject;
+
 public class Customer {
 
     private String username;
@@ -46,4 +51,28 @@ public class Customer {
     public void setPassword(String password) {
         this.password = password;
     }
+
+
+
+public JsonObject toJsonCardDeets() {
+    return Json.createObjectBuilder()
+        .add("firstname", firstname)
+        .add("lastname", lastname)
+        .add("address", address)
+        .add("email", email)
+        .add("password", password)
+        .build();
+}
+
+public static Customer createCust(JsonObject json) {
+    Customer customer = new Customer();
+    //cardDetails.setProduct_id(rs.getInt("product_id"));
+    customer.setFirstname(json.getString("firstname"));
+    customer.setLastname(json.getString("lastname"));
+    customer.setAddress(json.getString("address"));
+    customer.setEmail(json.getString("email"));
+    customer.setPassword(json.getString("password"));
+    return customer;
+}
+
 }

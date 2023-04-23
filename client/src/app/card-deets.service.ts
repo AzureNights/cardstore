@@ -13,8 +13,7 @@ export class CardDeetsService {
   getCards(): Observable<CardDetails[]> {
     // return firstValueFrom(
       return this.http.get<CardDetails[]>('/api/cards')
-    
   }
-
-
 }
+
+//need to get info frtom backend ui think 

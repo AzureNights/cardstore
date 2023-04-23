@@ -28,17 +28,32 @@ create table customer(
     firstname varchar(128),
     lastname varchar(128),
     address varchar(256),
-    email varchar(128),
+    email varchar(128) not null unique,
     password need to check,
 
-    primary key(username)
-
-
-    private String username;
-    private String firstname;
-    private String lastname;
-    private String address;
-    private String email;
-    private String password;
+    primary key(email)
 
 )
+
+create table cartItems (
+	id integer auto_increment,
+	item varchar(128) not null,
+	quantity integer default '1',
+	order_id char(8) not null,
+
+	primary key(id),
+	constraint fk_line_item_order_id foreign key(order_id)
+		references purchase_order(order_id)
+);
+
+create table order_status (
+	id int auto_increment,
+	order_id char(8) not null,
+	delivery_id varchar(128),
+	status enum('pending', 'dispatched') default 'pending',
+	status_update timestamp default current_timestamp, 
+
+	primary key(id),
+	constraint fk_order_status_order_id foreign key(order_id)
+		references purchase_order(order_id)
+);
