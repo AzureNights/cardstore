@@ -59,7 +59,7 @@ insert into products(product_id, name, description, price, image_url, category) 
 	- Complimentary envelope provided, 
 	- Slight variations possible as each card is handmade' ,
     '5.00' ,
-    'https://azurasdesignzimages.s3.ap-southeast-2.amazonaws.com/Pink+%26+Purple+Ganesha+Deepavali+Card.JPG',
+    'https://azurasdesignzimages.s3.ap-southeast-2.amazonaws.com/IMG_1076.jpeg',
     'Deepavali Card'),
     
 	('2022001',
@@ -74,15 +74,15 @@ insert into products(product_id, name, description, price, image_url, category) 
     'Birthday Postcard'),
     
 	('2022002',
-    'Yellow Floral Birthday Card', 
+    'Snowglobe Christmas Card', 
     '- Original Hand painted work on 300gsm Watercolour paper, 
 	- Painting will be stuck on 200gsm card for best quality, 
 	- A6 size, 
 	- Complimentary envelope provided, 
 	- Slight variations possible as each card is handmade :' ,
     '5.00' ,
-    '/Users/kokila/Desktop/Biz Images for NUS PROJECT /Yellowy Floral Birthday Card.JPG',
-    'Birthday Card')
+    'https://azurasdesignzimages.s3.ap-southeast-2.amazonaws.com/Snowglobe+edited.jpeg',
+    'Christmas Card')
     
     
     
