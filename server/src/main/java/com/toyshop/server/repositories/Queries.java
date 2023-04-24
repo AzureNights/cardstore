@@ -10,6 +10,10 @@ public interface Queries {
     
     public String SQL_INSERT_CUSTOMER = "insert into customer(firstname, lastname, password, email, address) values (?, ?, sha2_512(?), ?);";
 
+    public String SQL_SELECT_CARD_BY_ID = "select * from products where product_id = ?";
+    //select * from products where product_id = '2021001';
+
+
 
     
 }

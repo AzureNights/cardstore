@@ -9,10 +9,19 @@ import { Observable, firstValueFrom } from 'rxjs';
 export class CardDeetsService {
 
   constructor(private http: HttpClient) { }
+  
 
   getCards(): Observable<CardDetails[]> {
     // return firstValueFrom(
       return this.http.get<CardDetails[]>('/api/cards')
+  }
+
+  getEachCard(product_id: number): Observable<CardDetails[]> {
+
+    // need to build URL based on product id
+    //const productUrl = `${this.baseUrl}/${theProductId}`;
+
+    return this.http.get<CardDetails[]>(`/api/cards/${product_id}`);
   }
 }
 

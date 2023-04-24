@@ -16,13 +16,12 @@ create table customer(
 	password varchar(100) not null,
 	email varchar(128) not null unique,
     address varchar(128),
-    
-	primary key(email)
+	primary key(name)
 );
 
 create table if not exists products(
 
-    product_id int(7) unique,
+    product_id int auto_increment unique,
     name varchar(128) not null,
     description varchar(256) not null,
     price decimal(5,2) not null, 
@@ -33,7 +32,13 @@ create table if not exists products(
     
 );
 
+create table order(
 
+	name varchar(128) not null,
+    description varchar(256) not null,
+    price decimal(5,2) not null, 
+    image_url varchar(256) default null,
+    category varchar (128) default null,
 
 
 create table line_item(
@@ -43,16 +48,13 @@ create table line_item(
 	quantity int default '1',
 	order_id char(8) not null,
     
-    primary key(cart_id)
-    
-);
+    primary key(cart_id),
     
 	
 
-insert into products(product_id, name, description, price, image_url, category) values
+insert into products(name, description, price, image_url, category) values
 
-	('2021001',
-    'Pink & Purple Ganesha Deepavali Card', 
+	('Pink & Purple Ganesha Deepavali Card', 
     '- Original Hand painted work on 300gsm Watercolour paper, 
 	- Painting will be stuck on 200gsm card for best quality, 
 	- A6 size, 
@@ -62,8 +64,7 @@ insert into products(product_id, name, description, price, image_url, category) 
     'https://azurasdesignzimages.s3.ap-southeast-2.amazonaws.com/Pink+%26+Purple+Ganesha+Deepavali+Card.JPG',
     'Deepavali Card'),
     
-	('2022001',
-    'Purple Floral Birthday Postcard', 
+	('Purple Floral Birthday Postcard', 
     '- Original Handmade watercolour postcard,
 	- Painted on light grey 100% cotton watercolour paper,  
 	- A6 size,
@@ -73,8 +74,7 @@ insert into products(product_id, name, description, price, image_url, category) 
     'https://azurasdesignzimages.s3.ap-southeast-2.amazonaws.com/Purple+Floral+Birthday+Postcard.JPG',
     'Birthday Postcard'),
     
-	('2022002',
-    'Yellow Floral Birthday Card', 
+	('Yellow Floral Birthday Card', 
     '- Original Hand painted work on 300gsm Watercolour paper, 
 	- Painting will be stuck on 200gsm card for best quality, 
 	- A6 size, 

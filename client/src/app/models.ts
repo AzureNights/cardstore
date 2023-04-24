@@ -1,5 +1,5 @@
 export interface CardDetails{
-    //product_id
+    product_id: number
     name: string
     description: string
     price: number

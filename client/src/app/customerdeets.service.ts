@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Observable, firstValueFrom } from 'rxjs';
 import { Customer } from './models';
 
 @Injectable({
@@ -11,8 +11,10 @@ export class CustomerdeetsService {
 
   constructor(private http: HttpClient) { }
 
-  addCust(): Observable<Customer[]> {
-    return this.httpClient.post('/api/signup')
+  addCust(customer: Customer[]): Observable<Customer[]> {
+    //return firstValueFrom(this.httpClient.post<Customer>('/api/signup'))
+
+    return this.http.post<Customer[]>('/api/signup', customer);
 
   }
 }

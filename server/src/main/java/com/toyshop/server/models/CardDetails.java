@@ -7,7 +7,7 @@ import jakarta.json.JsonObject;
 
 public class CardDetails {
 
-    //private Integer product_id;
+    private Integer product_id;
     private String name;
     private String description;
     private float price;
@@ -15,12 +15,12 @@ public class CardDetails {
     private String category;
 
     
-    // public Integer getProduct_id() {
-    //     return product_id;
-    // }
-    // public void setProduct_id(Integer product_id) {
-    //     this.product_id = product_id;
-    // }
+    public Integer getProduct_id() {
+        return product_id;
+    }
+    public void setProduct_id(Integer product_id) {
+        this.product_id = product_id;
+    }
     public String getName() {
         return name;
     }
@@ -67,7 +67,7 @@ public class CardDetails {
 
     public static CardDetails createDeets(SqlRowSet rs) {
         CardDetails cardDetails = new CardDetails();
-        //cardDetails.setProduct_id(rs.getInt("product_id"));
+        cardDetails.setProduct_id(rs.getInt("product_id"));
         cardDetails.setName(rs.getString("name"));
         cardDetails.setDescription(rs.getString("description"));
         cardDetails.setPrice(rs.getFloat("price"));
