@@ -24,7 +24,7 @@ import { CustomerdeetsService } from './customerdeets.service'
 const appRoutes: Routes = [
   {path: '', component: HomeComponent},
   {path: 'login', component: LoginComponent},
-  {path: 'productinfo/productId', component: ProductinfoComponent},
+  {path: 'productinfo/:product_id', component: ProductinfoComponent},
   {path: 'checkout', component: CheckoutComponent},
   {path: 'productlist', component: ProductlistComponent},
   {path: 'about', component: AboutComponent},

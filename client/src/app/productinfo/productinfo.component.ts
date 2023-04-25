@@ -12,29 +12,59 @@ import { CardDeetsService } from '../card-deets.service';
 export class ProductinfoComponent implements OnInit {
 
   params$!: Subscription
-  card: CardDetails[] = []
+  cards!: CardDetails
   //activatedRoute: any;
 
-  constructor(private cardSvc: CardDeetsService) { }
+  constructor(
+    private activatedRoute: ActivatedRoute,
+    private cardSvc: CardDeetsService) { }
 
   ngOnInit(): void {
 
     this.params$ = this.activatedRoute.params.subscribe(
-      (params) =>{
+      (params) => {
         const product_id = params['product_id']
         this.cardSvc.getCardById(product_id)
           .then(result => {
-            this.card = result
-            console.info('>>> card: ', this.card)
+            this.cards = result
+            console.info('>>> card: ', this.cards)
           })
           .catch(error => {
             console.error('>> error: ', error)
           })
-    }
+      }
+    )
 
   }
 
-}
 
 
+    //FOR OBSERVABLE IN SERVICE 
+    // this.params$ = this.activatedRoute.params.subscribe(
+    //   (params) =>{
+    //     const product_id = params['product_id']
+    //     this.cardSvc.getCardById(product_id).subscribe(
+    //       (card: CardDetails[]) => {this.card = card
+    //         console.info('>>>>', this.card)})
+    //     )
+        
+
+
+          // .then((result: CardDetails[]) => {
+          //   this.card = result
+          //   console.info('>>> book: ', this.card)
+          // })
+
+
+
+      
+              
+        }
+          //then is only for promise  
+    //       .catch((error: any) => {
+    //         console.error('>> error: ', error)
+    //       })
+    // }
+
+  
 

@@ -1,1 +1,83 @@
-<p>productinfo works!</p>
+<!-- <div class="container">
+    <div class="row">
+        <div class="col-lg-3" *ngFor="let c of cards">
+            <div class="cards">
+
+                <h1>{{c.name}}</h1>
+                <h1>{{c.image_url}}</h1>
+                
+                <img [src]="c.image_url" alt="Card image">
+                
+                //original code 
+
+
+            </div>
+-->
+
+<!-- 
+    
+    ORIGINAL CODE W?O HTML 
+    
+    <div *ngIf="card">
+
+    <h3>{{ card.name }}</h3>
+
+    <h3>{{ card.description }}</h3>
+
+    <h3>{{ card.price }}</h3>
+
+    //<img [src]="card.image_url" alt="Card image" class="w-100" />
+          
+</div> -->
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <div class="image" *ngIf="cards">
+
+                <img [src]="cards.image_url" alt="Card image" class="w-100" />
+            
+            </div>
+
+        </div>
+
+        <div class="col-md-6 align-self-center">
+            
+            <div class="productdeets" *ngIf="cards">
+                       
+                <h2>{{cards.name}}</h2>
+                            
+                <h3 class="price">SGD {{cards.price}}.00</h3>
+                            
+                <h4 class="description" style="white-space: pre-line">{{cards.description}}</h4>
+
+                <p class="quantity">Quantity</p>
+
+                <!-- <div class="form-group">
+                    <label for="exampleFormControlSelect1">Example select</label>
+                    <select class="form-control" id="exampleFormControlSelect1">
+                      <option>1</option>
+                      <option>2</option>
+                      <option>3</option>
+                      <option>4</option>
+                      <option>5</option>
+                    </select>
+                </div> -->
+
+                <div class="form-outline">
+                    <input type="number" id="typeNumber" class="form-control" />
+                    <label class="form-label" for="typeNumber"></label>
+                </div>
+                <button type="submit" class="btn btn-primary btn-block mb-4">
+                    Add to Cart
+
+                    <!-- need to add cart method lord  -->
+                </button>
+
+            </div>
+        </div>
+
+
+
+    </div>
+</div>

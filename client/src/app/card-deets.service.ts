@@ -16,12 +16,17 @@ export class CardDeetsService {
       return this.http.get<CardDetails[]>('/api/cards')
   }
 
-  getEachCard(product_id: number): Observable<CardDetails[]> {
+  getCardById(product_id: number): Promise<CardDetails> {
 
     // need to build URL based on product id
     //const productUrl = `${this.baseUrl}/${theProductId}`;
 
-    return this.http.get<CardDetails[]>(`/api/cards/${product_id}`);
+    return firstValueFrom(
+      this.http.get<CardDetails>(`/api/cards/${product_id}`)
+    )
+
+
+    //return this.http.get<CardDetails[]>(`/api/cards/${product_id}`);
   }
 }
 
