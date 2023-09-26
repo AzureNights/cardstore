@@ -1,3 +1,5 @@
+Previously hosted on Railway, taken down due to policy changes on Railway. 
+
 This was a project done to try making an e-commerce card store. 
 There are still some things that have to be fixed. 
 
